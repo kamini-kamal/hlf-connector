@@ -3,6 +3,7 @@ package hlf.java.rest.client.config;
 import lombok.Data;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 
 import javax.annotation.PostConstruct;
@@ -15,6 +16,7 @@ import java.util.List;
 @Data
 @Configuration
 @ConfigurationProperties(prefix = "fabric")
+@RefreshScope
 public class FabricProperties {
 
   private static final String SYSTEM_PROP_FABRIC_SERVICE_DISCOVERY_LOCALHOST =
